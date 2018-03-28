@@ -17,11 +17,17 @@ public class DealTest extends loginTest {
 	WebElement ele= driver.findElement(By.xpath("//a[text()='Deals']"));
 	act.moveToElement(ele).build().perform();
 	driver.findElement(By.xpath("//a [text()='New Deal']")).click();
-	driver.findElement(By.id("title")).sendKeys("SLK SOFT");
-	driver.findElement(By.id("(//input[@type='text'])[1]")).sendKeys("Software solutions");
+	Thread.sleep(5000);
+	driver.findElement(By.xpath("//input[@name='amount']//preceding::input[6]//preceding::input[3]")).sendKeys("MS");
+	Thread.sleep(5000);
+	driver.findElement(By.xpath("//input[@name='amount']//preceding::input[6]//preceding::input[3]"
+			+ "")).sendKeys("Software solutions");
+	Thread.sleep(5000);
 	WebElement ele1=driver.findElement(By.xpath("//select[@name='type']"));
 	  Select sel=new Select(ele1);
 	  sel.selectByVisibleText("Old");
+	  
+	  driver.findElement(By.xpath("(//input[@class='button'])[1]")).click();
 	  
 	 
   }
